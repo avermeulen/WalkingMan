@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="index.js" defer></script>
+    <style>
+        body {
+            background-color: darkcyan;
+            color: yellowgreen;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        canvas {
+            /* border: 1px solid; */
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .container {
+            width: 20em;
+            margin: auto;
+        }    
+    </style>
+</head>
+
+<body onkeyup="navigateMan()">
+
+    <div class="container">
+        <h1>Walking man</h1>
+
+        <canvas id="image" width="136" height="136"></canvas>
+
+        <ul>
+            <li>
+                 Navigate the Walking Man using the up/down/left/right arrows.
+            </li>
+            <li>
+                 Or by using the `a,w,s & d` keys
+            </li>
+            <li>
+                Press `h` to show or hide the sprite sheet in use.
+            </li>
+        </ul>
+
+
+        <div class="sprite hidden">
+            <h2>Sprite sheet in use</h2>
+            <img class="man " src="man_walking.png" alt="">
+        </div>
+        <div class="direction hidden">
+
+        </div>
+    </div>
+
+</body>
+
+</html>
