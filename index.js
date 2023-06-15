@@ -11,14 +11,30 @@ console.log(img);
 
 let index = 0;
 let action = 0;
-setInterval(
-    () => {
+
+let frameCounter = 0;
+let staggerRate = 17;
+
+
+function animate() {
+    if (frameCounter % staggerRate == 0) {
+
         if (index >= 5) {
             index = 0;
         }
+
         ctx.drawImage(document.querySelector('.man'), 136 * index, 136*action, 136, 136,  0, 0, 136, 136);
         index++;
-    }, 100)
+
+    }
+
+
+
+    requestAnimationFrame(animate);
+    frameCounter++;
+}
+
+animate();
 
 
 const direction = document.querySelector('.direction')
@@ -48,7 +64,18 @@ function navigateMan() {
     else if (keyCode == 72) {
         document.querySelector('.sprite').classList.toggle('hidden');
     }
+    else if (keyCode == 187) {
+        if (staggerRate > 1) {
+            staggerRate--;
+        }
+    }
+    else if (keyCode == 189) {
+        if (staggerRate < 20) {
+            staggerRate++;
+        }
+    }
 
-    direction.innerText = keyCode;
+
+    direction.innerText = staggerRate;
 
 }   
